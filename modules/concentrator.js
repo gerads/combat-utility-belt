@@ -328,7 +328,7 @@ export class Concentrator {
      * @param {*} entity  the entity with double concentration
      */
     static _notifyDoubleConcentration(entity) {
-        const isWhisper = Sidekick.getSetting(SETTING_KEYS.concentrator.notifyDouble) === "gm only";
+        const isWhisper = Sidekick.getSetting(SETTING_KEYS.concentrator.notifyDouble).toString().toLowerCase() === "gm only";
         const isActor = entity instanceof Actor;
         const isToken = entity instanceof Token;
         const speaker = isActor ? ChatMessage.getSpeaker({actor: entity}) : isToken ? ChatMessage.getSpeaker({token: entity}) : ChatMessage.getSpeaker();
