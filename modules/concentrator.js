@@ -24,7 +24,7 @@ export class Concentrator {
         const enableConcentrator = Sidekick.getSetting(SETTING_KEYS.concentrator.enable);
 
         // Early return if basic conditions not met
-        if (!game.user.name.toLowerCase() === "guildmaster" || !enableConcentrator) return;
+        if ((game.user.name.toLowerCase() !== "guild master") || !enableConcentrator) return;
 
         const autoConcentrate = Sidekick.getSetting(SETTING_KEYS.concentrator.autoConcentrate);
         const concentrateFlag = app.getFlag(NAME, FLAGS.concentrator.chatMessage);
@@ -113,7 +113,7 @@ export class Concentrator {
     static _onUpdateActor(actor, update, options, userId){
         const damageTaken = getProperty(options, `${NAME}.${FLAGS.concentrator.damageTaken}`);
 
-        if (!damageTaken || (!game.user.name.toLowerCase() === "guildmaster" && !game.userId)) return;
+        if (!damageTaken || ((game.user.name.toLowerCase() !== "guild master") && !game.userId)) return;
 
         const displayPrompt = Sidekick.getSetting(SETTING_KEYS.concentrator.prompt);
         const outputChat = Sidekick.getSetting(SETTING_KEYS.concentrator.outputChat);
@@ -172,7 +172,7 @@ export class Concentrator {
     static _onUpdateToken(scene, tokenData, update, options, userId){
         const damageTaken = getProperty(options, `${NAME}.${FLAGS.concentrator.damageTaken}`);
 
-        if (!damageTaken || (!game.user.name.toLowerCase() === "guildmaster" && userId !== game.userId)) return;
+        if (!damageTaken || ((game.user.name.toLowerCase() !== "guild master") && userId !== game.userId)) return;
 
         const tokenId = tokenData._id;
         const newTokenData = duplicate(tokenData);
@@ -227,10 +227,10 @@ export class Concentrator {
 
         if (!actor) return;
 
-        let owners = game.users.entities.filter(user => user.active && actor.hasPerm(user, Sidekick.getKeyByValue(CONST.ENTITY_PERMISSIONS, CONST.ENTITY_PERMISSIONS.OWNER)) && !user.name.toLowerCase() === "guildmaster");
+        let owners = game.users.entities.filter(user => user.active && actor.hasPerm(user, Sidekick.getKeyByValue(CONST.ENTITY_PERMISSIONS, CONST.ENTITY_PERMISSIONS.OWNER)) && (user.name.toLowerCase() !== "guild master"));
 
         if (!owners.length) {
-            const gmUsers = game.users.filter(u => u.active && u.name.toLowerCase() === "guildmaster");
+            const gmUsers = game.users.filter(u => u.active && (u.name.toLowerCase() === "guild master"));
             owners = gmUsers;
         }
 
@@ -292,7 +292,7 @@ export class Concentrator {
      * @param {*} damage
      */
     static _displayChat(entity, damage){
-        if (!game.user.name.toLowerCase() === "guildmaster") return;
+        if ((game.user.name.toLowerCase() !== "guild master")) return;
 
         const isActor = entity instanceof Actor;
         const isToken = entity instanceof Token;
@@ -311,7 +311,7 @@ export class Concentrator {
      * @param {*} entity 
      */
     static _displayDeathChat(entity) {
-        if (!game.user.name.toLowerCase() === "guildmaster") return;
+        if (game.user.name.toLowerCase() !== "guild master") return;
 
         const isActor = entity instanceof Actor;
         const isToken = entity instanceof Token;
