@@ -1,16 +1,12 @@
 {
-  "name": "combat-utility-belt",
-  "title": "Combat Utility Belt",
+  "name": "combat-utility-belt_gerads",
+  "title": "Combat Utility Belt Gerads",
   "description": "Adds various combat-focused features",
-  "version": "1.4.1",
-  "author": "Evan Clarke [errational#2007]",
+  "version": "1.4.2",
+  "author": "gerads",
   "authors": [
     {
-      "name": "Evan Clarke",
-      "url": "https://patreon.com/deathsave",
-      "discord": "errational#2007",
-      "twitter": "@death_save_dev",
-      "reddit": "u/etherboy12"
+      "name": "gerads"
     }
   ],
   "minimumCoreVersion": "0.7.6",
