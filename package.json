@@ -1,6 +1,6 @@
 {
   "name": "combat-utility-belt_gerads",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "description": "Combat-focused module for Foundry vtt",
   "main": "combat-utility-belt.js",
   "dependencies": {},
