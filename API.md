@@ -425,8 +425,7 @@ Exports the current map to JSON
 <a name="ConditionLab+_importFromJSONDialog"></a>
 
 ### conditionLab.\_importFromJSONDialog()
-Initiates an import via a dialog
-Borrowed from foundry.js Entity class
+Initiates an import via a dialogBorrowed from foundry.js Entity class
 
 **Kind**: instance method of [<code>ConditionLab</code>](#ConditionLab)  
 <a name="ConditionLab+_processImport"></a>
@@ -629,19 +628,13 @@ Builds a mapping between status icons and journal entries that represent conditi
 <a name="EnhancedConditions._onReady"></a>
 
 ### EnhancedConditions.\_onReady()
-Ready Hook handler
-Steps:
-1. Get default maps
-2. Get mapType
-3. Get Condition Map
-4. Override status effects
+Ready Hook handlerSteps:1. Get default maps2. Get mapType3. Get Condition Map4. Override status effects
 
 **Kind**: static method of [<code>EnhancedConditions</code>](#EnhancedConditions)  
 <a name="EnhancedConditions._onPreUpdateToken"></a>
 
 ### EnhancedConditions.\_onPreUpdateToken(scene, tokenData, update, options, userId)
-Handle PreUpdate Token Hook.
-If the update includes effect data, add an `option` for the update hook handler to look for
+Handle PreUpdate Token Hook.If the update includes effect data, add an `option` for the update hook handler to look for
 
 **Kind**: static method of [<code>EnhancedConditions</code>](#EnhancedConditions)  
 
@@ -967,18 +960,15 @@ Applies the named condition to the provided entities (Actors or Tokens)
 
 **Example**  
 ```js
-// Add the Condition "Blinded" to an Actor named "Bob". Duplicates will not be created.
-game.cub.addCondition("Blinded", game.actors.getName("Bob"));
+// Add the Condition "Blinded" to an Actor named "Bob". Duplicates will not be created.game.cub.addCondition("Blinded", game.actors.getName("Bob"));
 ```
 **Example**  
 ```js
-// Add the Condition "Charmed" to the currently controlled Token/s. Duplicates will not be created.
-game.cub.addCondition("Charmed");
+// Add the Condition "Charmed" to the currently controlled Token/s. Duplicates will not be created.game.cub.addCondition("Charmed");
 ```
 **Example**  
 ```js
-// Add the Conditions "Blinded" and "Charmed" to the targeted Token/s and create duplicates, replacing any existing Conditions of the same names.
-game.cub.addCondition(["Blinded", "Charmed"], [...game.user.targets], {allowDuplicates: true, replaceExisting: true});
+// Add the Conditions "Blinded" and "Charmed" to the targeted Token/s and create duplicates, replacing any existing Conditions of the same names.game.cub.addCondition(["Blinded", "Charmed"], [...game.user.targets], {allowDuplicates: true, replaceExisting: true});
 ```
 <a name="EnhancedConditions.getCondition"></a>
 
@@ -1008,13 +998,11 @@ Retrieves all active conditions for one or more given entities (Actors or Tokens
 
 **Example**  
 ```js
-// Get conditions for an Actor named "Bob"
-game.cub.getConditions(game.actors.getName("Bob"));
+// Get conditions for an Actor named "Bob"game.cub.getConditions(game.actors.getName("Bob"));
 ```
 **Example**  
 ```js
-// Get conditions for the currently controlled Token
-game.cub.getConditions();
+// Get conditions for the currently controlled Tokengame.cub.getConditions();
 ```
 <a name="EnhancedConditions.getActiveEffect"></a>
 
@@ -1057,13 +1045,11 @@ Checks if the provided Entity (Actor or Token) has the given condition
 
 **Example**  
 ```js
-// Check for the "Blinded" condition on Actor "Bob"
-game.cub.hasCondition("Blinded", game.actors.getName("Bob"));
+// Check for the "Blinded" condition on Actor "Bob"game.cub.hasCondition("Blinded", game.actors.getName("Bob"));
 ```
 **Example**  
 ```js
-// Check for the "Charmed" and "Deafened" conditions on the controlled tokens
-game.cub.hasCondition(["Charmed", "Deafened"]);
+// Check for the "Charmed" and "Deafened" conditions on the controlled tokensgame.cub.hasCondition(["Charmed", "Deafened"]);
 ```
 <a name="EnhancedConditions.removeCondition"></a>
 
@@ -1081,13 +1067,11 @@ Removes one or more named conditions from an Entity (Actor/Token)
 
 **Example**  
 ```js
-// Remove Condition named "Blinded" from an Actor named Bob
-game.cub.removeConditions("Blinded", game.actors.getName("Bob"));
+// Remove Condition named "Blinded" from an Actor named Bobgame.cub.removeConditions("Blinded", game.actors.getName("Bob"));
 ```
 **Example**  
 ```js
-// Remove Condition named "Charmed" from the currently controlled Token, but don't show any warnings if it fails.
-game.cub.removeConditions("Charmed", {warn=false});
+// Remove Condition named "Charmed" from the currently controlled Token, but don't show any warnings if it fails.game.cub.removeConditions("Charmed", {warn=false});
 ```
 <a name="EnhancedConditions.removeAllConditions"></a>
 
@@ -1103,13 +1087,11 @@ Removes all conditions from the provided entities
 
 **Example**  
 ```js
-// Remove all Conditions on an Actor named Bob
-game.cub.removeAllConditions(game.actors.getName("Bob"));
+// Remove all Conditions on an Actor named Bobgame.cub.removeAllConditions(game.actors.getName("Bob"));
 ```
 **Example**  
 ```js
-// Remove all Conditions on the currently controlled Token
-game.cub.removeAllConditions();
+// Remove all Conditions on the currently controlled Tokengame.cub.removeAllConditions();
 ```
 <a name="PanSelect"></a>
 
@@ -1392,8 +1374,7 @@ Attempts to coerce a target value into the exemplar's type
 <a name="Sidekick.buildFormData"></a>
 
 ### Sidekick.buildFormData(FD)
-Builds a FD returned from FormDataExtended into a formData array
-Borrowed from foundry.js
+Builds a FD returned from FormDataExtended into a formData arrayBorrowed from foundry.js
 
 **Kind**: static method of [<code>Sidekick</code>](#Sidekick)  
 
@@ -1581,11 +1562,7 @@ Update token handler
 <a name="DraggableList"></a>
 
 ## DraggableList
-From Valentin "Moerill" Henkys
-the code is licensed under LGPL v3.
-Original is implemented in his module "Mess":
-https://github.com/Moerill/Mess
-LICENSE: https://github.com/Moerill/Mess/blob/master/LICENSE
+From Valentin "Moerill" Henkysthe code is licensed under LGPL v3.Original is implemented in his module "Mess":https://github.com/Moerill/MessLICENSE: https://github.com/Moerill/Mess/blob/master/LICENSE
 
 **Kind**: global class  
 <a name="KNOWN_GAME_SYSTEMS"></a>

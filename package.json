@@ -1,30 +1,30 @@
 {
   "name": "combat-utility-belt",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Combat-focused module for Foundry vtt",
   "main": "combat-utility-belt.js",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "gulp": "^4.0.2",
     "@pixi/jsdoc-template": "^2.6.0",
     "gitignore": "^0.6.0",
+    "gulp": "^4.0.2",
     "gulp-zip": "^5.0.2",
     "jquery": "^3.5.1",
     "jsdoc-to-markdown": "^6.0.1",
     "node-fetch": "^2.6.1"
   },
   "scripts": {
+    "build": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/death-save/combat-utility-belt.git"
+    "url": "git+https://github.com/gerads/combat-utility-belt.git"
   },
   "author": "Evan Clarke",
   "license": "SEE LICENSE IN LICENSE",
   "bugs": {
-    "url": "https://github.com/death-save/combat-utility-belt/issues"
+    "url": "https://github.com/gerads/combat-utility-belt/issues"
   },
-  "homepage": "https://github.com/death-save/combat-utility-belt#readme"
+  "homepage": "https://github.com/gerads/combat-utility-belt#readme"
 }
